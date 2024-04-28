@@ -9,5 +9,5 @@ public class WorkingHour
     public DateTime? Start { get; set; }
     public DateTime? End { get; set; }
     public int DumpTruckId { get; set; }
-    public DumpTruck DumpTruck { get; set; } = null!;
+    public virtual DumpTruck DumpTruck { get; set; } = null!;
 }

@@ -20,7 +20,7 @@ public class DumpTruck
     public string? EngineModel { get; set;}
     public string? TireModel { get; set;}
 
-    public ICollection<Filling> Fillings { get; set; } = [];
-    public ICollection<WorkingHour> WorkingHours { get; set; } = [];
+    public virtual ICollection<Filling> Fillings { get; set; } = [];
+    public virtual ICollection<WorkingHour> WorkingHours { get; set; } = [];
 
 }

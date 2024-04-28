@@ -9,5 +9,5 @@ public class Filling
     public double? InitialVolume { get; set; }
     public DateTime? CreatedAt { get; set; }
     public int DumpTruckId { get; set; }
-    public DumpTruck DumpTruck { get; set; } = null!;
+    public virtual DumpTruck DumpTruck { get; set; } = null!;
 }

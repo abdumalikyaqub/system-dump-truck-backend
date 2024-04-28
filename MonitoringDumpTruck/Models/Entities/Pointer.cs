@@ -21,8 +21,8 @@ public class Pointer
     public double TireTemperature { get; set; }
     public double TireTreadDepth { get; set; }
 
-    public DumpTruck DumpTruck { get; set; } = null!;
-    public RoadType RoadType { get; set; } = null!;
-    public Status Status { get; set; } = null!;
+    public virtual DumpTruck DumpTruck { get; set; } = null!;
+    public virtual RoadType RoadType { get; set; } = null!;
+    public virtual Status Status { get; set; } = null!;
 
 }

@@ -102,3 +102,6 @@ D:\Разработка\netcore\MonitoringDumpTruck\MonitoringDumpTruck\obj\Debu
 D:\Разработка\netcore\MonitoringDumpTruck\MonitoringDumpTruck\obj\Debug\net8.0\MonitoringDumpTruck.pdb
 D:\Разработка\netcore\MonitoringDumpTruck\MonitoringDumpTruck\obj\Debug\net8.0\MonitoringDumpTruck.genruntimeconfig.cache
 D:\Разработка\netcore\MonitoringDumpTruck\MonitoringDumpTruck\obj\Debug\net8.0\ref\MonitoringDumpTruck.dll
+D:\Разработка\netcore\MonitoringDumpTruck\MonitoringDumpTruck\bin\Debug\net8.0\Castle.Core.dll
+D:\Разработка\netcore\MonitoringDumpTruck\MonitoringDumpTruck\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\Разработка\netcore\MonitoringDumpTruck\MonitoringDumpTruck\obj\Debug\net8.0\MonitoringDumpTruck.sourcelink.json
