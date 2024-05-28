@@ -5,32 +5,24 @@ namespace MonitoringDumpTruck.Models;
 
 public class MonitoringContext : DbContext
 {
+    public DbSet<User> Users { get; set; } = null!;
+    public DbSet<Role> Roles { get; set; } = null!;
     public DbSet<DumpTruck> DumpTrucks { get; set; } = null!;
+    public DbSet<RoadType> RoadTypes { get; set; } = null!;
+    public DbSet<Status> Statuses { get; set; } = null!;
     public DbSet<WorkingHour> WorkingHours { get; set; } = null!;
     public DbSet<Filling> Fillings { get; set; } = null!;
+    public DbSet<Pointer> Pointers { get; set; } = null!;
 
-    //public MonitoringContext(DbContextOptions<MonitoringContext> options)
-    //    : base(options)
-    //{
-    //    Database.EnsureCreated();
-    //    bool isAvalaible = Database.CanConnect();
-    //    // bool isAvalaible2 = await db.Database.CanConnectAsync();
-    //    if (isAvalaible) Console.WriteLine("База данных доступна");
-    //    else Console.WriteLine("База данных не доступна");
-
-    //}
-    
-    public MonitoringContext()
+    public MonitoringContext(DbContextOptions<MonitoringContext> options)
+        : base(options)
     {
-        Database.EnsureCreated();
-    }
+        //Database.EnsureCreated();
+        bool isAvalaible = Database.CanConnect();
+        // bool isAvalaible2 = await db.Database.CanConnectAsync();
+        if (isAvalaible) Console.WriteLine("База данных доступна");
+        else Console.WriteLine("База данных не доступна");
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=monitoring-truck;Username=postgres;Password=malik98");
-        optionsBuilder
-            .UseLazyLoadingProxies();        // подключение lazy loading
-        
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
