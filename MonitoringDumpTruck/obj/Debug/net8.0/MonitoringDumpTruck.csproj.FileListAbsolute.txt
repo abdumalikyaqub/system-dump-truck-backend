@@ -232,3 +232,4 @@ D:\Разработка\netcore\MonitoringDumpTruck\MonitoringDumpTruck\bin\Debu
 D:\Разработка\netcore\MonitoringDumpTruck\MonitoringDumpTruck\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 D:\Разработка\netcore\MonitoringDumpTruck\MonitoringDumpTruck\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\Разработка\netcore\MonitoringDumpTruck\MonitoringDumpTruck\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+D:\Разработка\netcore\MonitoringDumpTruck\MonitoringDumpTruck\bin\Debug\net8.0\BCrypt.Net-Next.dll

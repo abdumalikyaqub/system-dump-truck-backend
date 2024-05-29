@@ -1,6 +1,9 @@
 @MonitoringDumpTruck_HostAddress = http://localhost:5233
 
-GET {{MonitoringDumpTruck_HostAddress}}/weatherforecast/
+GET {{MonitoringDumpTruck_HostAddress}}/api/DumpTrucks
 Accept: application/json
 
 ###
+
+GET {{MonitoringDumpTruck_HostAddress}}/api/dumptrucks/4
+Accept: application/json
