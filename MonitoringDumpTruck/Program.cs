@@ -11,6 +11,17 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<MonitoringContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("MonitoringTruckConnection")));
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -19,6 +30,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowAllOrigins");
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
