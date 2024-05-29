@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using MonitoringDumpTruck.Helpers;
 using MonitoringDumpTruck.Models;
 using MonitoringDumpTruck.Models.Entities;
 
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpClient<FlaskApiService>();
 
 builder.Services.AddDbContext<MonitoringContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("MonitoringTruckConnection")));

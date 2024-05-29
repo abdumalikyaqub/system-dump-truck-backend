@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Unicode;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MonitoringDumpTruck.Helpers;
 using MonitoringDumpTruck.Models;
 using MonitoringDumpTruck.Models.Entities;
-using NuGet.Protocol.Core.Types;
 
 namespace MonitoringDumpTruck.Controllers;
 
@@ -107,7 +100,7 @@ public class DumpTrucksController : ControllerBase
 
     [HttpPost("import/json")]
     [Consumes("multipart/form-data")]
-    public async Task<IActionResult> ImportFromJson([FromForm] IFormFile file)
+    public async Task<IActionResult> ImportFromJson(IFormFile file)
     {
         if (file == null || file.Length == 0)
             return BadRequest("No file uploaded");
@@ -126,7 +119,7 @@ public class DumpTrucksController : ControllerBase
             {
                 foreach (var item in dumpTrucks)
                 {
-                    var truck = new DumpTruck 
+                    var truck = new DumpTruck
                     {
                         MaxFuel = item.MaxFuel,
                         MaxSpeed = item.MaxSpeed,
@@ -158,38 +151,14 @@ public class DumpTrucksController : ControllerBase
         var dumpTrucks = await _context.DumpTrucks.ToListAsync();
         var options = new JsonSerializerOptions
         {
-            // Устанавливаем флаг Encoder для сохранения русских символов без Unicode escape
+            
             Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
-            WriteIndented = true // Для красивого форматирования JSON
+            WriteIndented = true 
         };
-        var jsonData = JsonSerializer.Serialize(dumpTrucks, options); // Преобразуем данные в JSON
+        var jsonData = JsonSerializer.Serialize(dumpTrucks, options); 
         var fileName = "dump_trucks.json";
 
         return File(Encoding.UTF8.GetBytes(jsonData), "application/json", fileName);
     }
 
-    //[HttpPost("import/csv")]
-    //public async Task<IActionResult> ImportFromCsv([FromForm] Microsoft.AspNetCore.Http.IFormFile file)
-    //{
-    //    if (file == null || file.Length == 0)
-    //        return BadRequest("No file uploaded");
-
-    //    using (var streamReader = new StreamReader(file.OpenReadStream()))
-    //    {
-    //        // Логика импорта из CSV
-    //    }
-
-    //    return Ok("Data imported successfully");
-    //}
-
-
-    //[HttpPost("export/csv")]
-    //public async Task<IActionResult> ExportToCsv()
-    //{
-    //    var dumpTrucks = await _context.DumpTrucks.ToListAsync();
-    //    var csvData =  Export.ConvertToCsv(dumpTrucks); // Преобразуем данные в CSV
-    //    var fileName = "dump_trucks.csv"; 
-
-    //    return File(csvData, "text/csv", fileName); // Возвращаем файл
-    //}
 }

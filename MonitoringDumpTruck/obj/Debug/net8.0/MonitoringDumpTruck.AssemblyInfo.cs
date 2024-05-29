@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MonitoringDumpTruck")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5682b6c3bfd46a730ff4fcf022eef878c28ca1f2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6edf394f6602e45c549c45a3d739dbf0f94611b5")]
 [assembly: System.Reflection.AssemblyProductAttribute("MonitoringDumpTruck")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MonitoringDumpTruck")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
